@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+  </head>
+  <body>
+    <h1>Pokemon Page!</h1>
+    <h2>Add Pokemon</h2>
+    <button type="button" name="button"><a href="/add/pokemon">Add a Pokemon</a></button>
+    <h2>Pokemon List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>CP</th>
+      <th>In Gym</th>
+      <th>Trainer ID</th>
+      <th>Show Pokemon</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%  for(let i=0;i<pokemon.length;i++){ %>
+    <tr>
+      <td><%= pokemon[i].name %></td>
+      <td><%= pokemon[i].cp %></td>
+      <td><%= pokemon[i].in_gym %></td>
+      <td><%= pokemon[i].trainer_id %></td>
+      <td><a href="/show/pokemon/<%=pokemon.id%>">Show</a></td>
+      <td><a href="/edit/pokemon/<%=pokemon.id%>">Edit</a></td>
+      <td><a href="#">Delete</a></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show Pokemon</title>
+  </head>
+
+  <body>
+    <% if(pokemon){ %>
+    <h1>Pokemon Selected: <%= pokemon.name %></h1>
+    <h2>Name: </h2>
+    <p><%= pokemon.name %></p>
+    <h2>CP: </h2>
+    <p><%= pokemon.cp %></p>
+    <h2>In Gym?: </h2>
+    <p><%= pokemon.in_gym %></p>
+    <h2>Trainer ID: </h2>
+    <p><%= pokemon.trainer_id %></p>
+    <% } %>
+  </body>
+</html>

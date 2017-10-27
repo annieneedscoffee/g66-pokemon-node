@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Pokemon</title>
+  </head>
+  <body>
+<h1>Edit Pokemon Below</h1>
+<h2>Pokemon: <%= pokemon.name%></h2>
+<form action="/edit/pokemon" method="post">
+  <h2>Name: </h2>
+  <p><%= pokemon.name %></p>
+  <input type="text" name="name" placeholder="name">
+  <h2>CP: </h2>
+  <p><%= pokemon.cp %></p>
+  <input type="text" name="cp" placeholder="cp">
+  <h2>In Gym?</h2>
+  <p><%= pokemon.in_gym %></p>
+  <input type="text" name="in_gym" placeholder="in gym?">
+  <h2>Trainer ID: </h2>
+  <p><%= pokemon.trainer_id %></p>
+  <input type="text" name="trainer_id" placeholder="trainer id">
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
