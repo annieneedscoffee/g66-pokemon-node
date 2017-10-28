@@ -3,8 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Pokemon</title>
+    <style>
+  table, td{border: 1px solid black;
+}
+.box{
+  width: 50%;
+  float: left;
+  background-color: white;
+}
+body{
+  background-image: url("http://rack.1.mshcdn.com/media/ZgkyMDE2LzAyLzI1L2VmL1Bva2Vtb25JbnNpLjlhYjM5LmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/a131f9e2/192/Pokemon-Insides-THumb.jpg");
+  background-size: cover;
+    background-repeat: no-repeat;
+}
+table, h1, h2, button {
+  margin-left: 5%;
+}
+table{
+  margin-bottom: 5%;
+}
+</style>
   </head>
   <body>
+    <div class="box">
+
+
     <h1>Pokemon Page!</h1>
     <h2>Add Pokemon</h2>
     <button type="button" name="button"><a href="/add/pokemon">Add a Pokemon</a></button>
@@ -19,21 +42,38 @@
       <th>Show Pokemon</th>
       <th>Edit</th>
       <th>Delete</th>
+      <th>Change Gym</th>
     </tr>
   </thead>
   <tbody>
+   <% let moreTwo = false %>
+   <% let x = [] %>
+   <% for(y=0;y<pokemon.length;y++){ %>
+  <%   if(pokemon[y].in_gym===true){ %>
+    <% x.push(pokemon[y].name) %>
+<%   } %>
+<% } %>
+<% if(x.length>1){ %>
+<% moreTwo = true} %>
   <%  for(let i=0;i<pokemon.length;i++){ %>
     <tr>
       <td><%= pokemon[i].name %></td>
       <td><%= pokemon[i].cp %></td>
       <td><%= pokemon[i].in_gym %></td>
       <td><%= pokemon[i].trainer_id %></td>
-      <td><a href="/show/pokemon/<%=pokemon.id%>">Show</a></td>
-      <td><a href="/edit/pokemon/<%=pokemon.id%>">Edit</a></td>
-      <td><a href="#">Delete</a></td>
+      <td><a href="/show/pokemon/<%= pokemon[i].id %>">Show</a></td>
+      <td><a href="/edit/pokemon/<%=pokemon[i].id%>">Edit</a></td>
+      <td><a href='/pokemon/delete/<%=pokemon[i].id%>'>Delete</a></td>
+      <% if(pokemon[i].in_gym===true){ %>
+      <td><a href="#">Remove from gym</a></td>
+      <% } %>
+      <% if(pokemon[i].in_gym===false && moreTwo===false){ %>
+      <td><a href="#">Add to gym</a></td>
+      <% } %>
     </tr>
     <% } %>
   </tbody>
 </table>
+  </div>
   </body>
 </html>

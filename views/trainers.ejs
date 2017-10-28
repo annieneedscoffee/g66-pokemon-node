@@ -3,8 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Trainers</title>
+    <style>
+    body{
+      background-image: url("https://imageresizer.static9.net.au/oD3i39eKBS6V7z95VtdnxCYxKnY=/1920x0/https%3A%2F%2Fs3-ap-southeast-2.amazonaws.com%2Fvms-tv-images-prod%2F2017%2F04%2F67895%2FPOKE_Pokemon_1920.jpg");
+      background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .box{
+      background-color: white;
+      border: 2px solid black;
+      width: 50%;
+      height: 25%;
+      margin-left: 25%;
+
+    }
+    table, tr, td{
+      margin: auto;
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    table{
+      margin-bottom: 15%;
+    }
+    h1, h2, p {
+      padding-left: 3%;
+      text-align: center
+    }
+    </style>
   </head>
   <body>
+    <div class="box">
+
+
     <h1>Trainers</h1>
     <table>
       <thead>
@@ -19,10 +50,11 @@
         <tr>
           <td><%= trainers[i].name %></td>
           <td><%= trainers[i].id %></td>
-          <td><a href="/show/trainers/<%=trainers.id%>">Show</a></td>
+          <td><a href="/show/trainers/<%=trainers[i].id%>">Show</a></td>
         </tr>
         <% } %>
       </tbody>
     </table>
+    </div>
   </body>
 </html>

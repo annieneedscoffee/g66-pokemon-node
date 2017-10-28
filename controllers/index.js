@@ -3,7 +3,7 @@ var knex = require('../db/knex.js');
 module.exports = {
 
   main: function(req, res, next) {
-    res.render('index', { title: 'Express' });
+    res.redirect('/pokemon');
   },
 
   pkmn: function(req, res){
@@ -59,6 +59,8 @@ module.exports = {
     });
   },
 
+
+
   train: function(req, res){
     knex('trainers').then((result)=>{
       res.render('trainers', {trainers: result})
@@ -71,9 +73,13 @@ module.exports = {
   shwtr: function(req, res){
     knex('trainers')
   .where('id', req.params.id)
-    .then((result)=>{
-      res.render('showtrainers', {trainers: result[0]})
+    .then((trainresult)=>{
+      knex('pokemon')
+      .where('trainer_id', req.params.id)
+      .then((pokeresults)=>{
+      res.render('showtrainers', {trainers: trainresult[0], pokemon: pokeresults});
     })
+  })
     .catch((err)=>{
       console.error(err)
     });
@@ -82,6 +88,19 @@ module.exports = {
   gym: function(req, res){
     knex('pokemon').then((result)=>{
       res.render('gym', {pokemon: result})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  del: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .del()
+    .then((result)=>{
+      console.log(result);
+      res.redirect("/pokemon")
     })
     .catch((err)=>{
       console.error(err)

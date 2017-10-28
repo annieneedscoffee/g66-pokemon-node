@@ -2,11 +2,31 @@
 <html>
   <head>
     <title>Edit Pokemon</title>
+    <style>
+    body{
+      background-image: url("https://theenterprisedaily.com/wp-content/uploads/2017/07/Pokemon-go-raid-q234.jpg");
+      background-size: cover;
+        background-repeat: no-repeat;
+    }
+     .box{
+       background-color: white;
+       border: 1px solid black;
+       width: 40%;
+       margin-top: 20%;
+     }
+     h1, h2, p, form {
+       padding-left: 3%;
+     }
+     form{
+       padding-bottom: 2%;
+     }
+    </style>
   </head>
   <body>
+    <div class="box">
 <h1>Edit Pokemon Below</h1>
 <h2>Pokemon: <%= pokemon.name%></h2>
-<form action="/edit/pokemon" method="post">
+<form action="/edit/pokemon/" method="post">
   <h2>Name: </h2>
   <p><%= pokemon.name %></p>
   <input type="text" name="name" placeholder="name">
@@ -21,5 +41,6 @@
   <input type="text" name="trainer_id" placeholder="trainer id">
   <input type="submit" value="Submit">
 </form>
+  </div>
 </body>
 </html>

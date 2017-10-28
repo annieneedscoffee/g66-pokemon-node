@@ -3,9 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Show Pokemon</title>
+    <style>
+    body{
+      background-image: url("https://theenterprisedaily.com/wp-content/uploads/2017/07/Pokemon-go-raid-q234.jpg");
+      background-size: cover;
+        background-repeat: no-repeat;
+    }
+     .box{
+       background-color: white;
+       border: 1px solid black;
+       width: 40%;
+       margin-top: 20%;
+     }
+     h1, h2, p {
+       padding-left: 3%;
+     }
+    </style>
   </head>
 
   <body>
+    <div class="box">
+
     <% if(pokemon){ %>
     <h1>Pokemon Selected: <%= pokemon.name %></h1>
     <h2>Name: </h2>
@@ -16,6 +34,10 @@
     <p><%= pokemon.in_gym %></p>
     <h2>Trainer ID: </h2>
     <p><%= pokemon.trainer_id %></p>
+    <h2>Trainer Name: </h2>
+    <% let tr = ['x','Markel', 'Jacob', 'Ella', 'Valencia'] %>
+    <p><%= tr[pokemon.trainer_id] %></p>
     <% } %>
+      </div>
   </body>
 </html>

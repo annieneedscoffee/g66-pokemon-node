@@ -3,8 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Add Pokemon</title>
+    <style media="screen">
+      .box{
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+      }
+      form{
+        padding-bottom: 3%;
+      }
+      body{
+        background-image: url("https://imageresizer.static9.net.au/oD3i39eKBS6V7z95VtdnxCYxKnY=/1920x0/https%3A%2F%2Fs3-ap-southeast-2.amazonaws.com%2Fvms-tv-images-prod%2F2017%2F04%2F67895%2FPOKE_Pokemon_1920.jpg");
+        background-size: cover;
+          background-repeat: no-repeat;
+      }
+    </style>
   </head>
   <body>
+    <div class="box">
     <h1>Add a Pokemon Below</h1>
     <form class="" action="/add/pokemon" method="post">
 <input type="text" name="name" placeholder="name">
@@ -13,5 +29,6 @@
 <input type="text" name="trainer_id" placeholder="trainer id">
 <input type="submit" value="Create">
     </form>
+    </div>
   </body>
 </html>

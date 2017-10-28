@@ -12,4 +12,5 @@ module.exports = function(app){
   app.get('/trainers', index.train);
   app.get('/show/trainers/:id', index.shwtr);
   app.get('/gym', index.gym);
+  app.get('/pokemon/delete/:id', index.del);
 }
