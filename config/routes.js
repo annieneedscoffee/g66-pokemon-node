@@ -21,4 +21,5 @@ module.exports = function(app){
   app.get('/removegym/:id', index.fromgym);
   app.get('/battle/:id', index.battle);
   app.get('/reset', index.reset);
+  
 }

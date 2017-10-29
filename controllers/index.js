@@ -30,6 +30,7 @@ module.exports = {
   battle: function(req, res){
     knex('pokemon')
     .where('id', req.params.id)
+
     .then((result)=>{
       res.render('winner', {pokemon: result[0]})
     })

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Winner!</title>
     <style media="screen">
-      h1{
+      h1, h2{
         text-align: center;
         margin-top: 5%;
         font-weight: bold;
@@ -21,6 +21,9 @@
     </style>
   </head>
   <body>
+    <button type="button" name="home"><a href="/pokemon">Home</a></button>
     <h1>!!!<%=pokemon.name%> Wins!!!</h1>
+    <h2>New CP: <%= pokemon.cp %> + 20 = <%= pokemon.cp + 20 %>!
+</h2>
   </body>
 </html>
