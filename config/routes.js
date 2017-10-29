@@ -19,4 +19,6 @@ module.exports = function(app){
   app.get('/addthismon1/:id', index.gymmon1);
   app.get('/addthismontogym/:id', index.togym);
   app.get('/removegym/:id', index.fromgym);
+  app.get('/battle/:id', index.battle);
+  app.get('/reset', index.reset);
 }

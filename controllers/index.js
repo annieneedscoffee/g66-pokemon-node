@@ -27,6 +27,17 @@ module.exports = {
     });
   },
 
+  battle: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .then((result)=>{
+      res.render('winner', {pokemon: result[0]})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
   edit: function(req, res, next){
     knex('pokemon')
     .where('id', req.params.id)
@@ -178,6 +189,22 @@ module.exports = {
       console.error(err)
     });
   },
+
+
+reset: function(req, res){
+  knex('pokemon')
+  .update({
+  in_gym: false
+    })
+  .then((result)=>{
+    console.log(result);
+    res.redirect("/gym")
+  })
+  .catch((err)=>{
+    console.error(err)
+  });
+},
+
 
   del: function(req, res){
     knex('pokemon')
