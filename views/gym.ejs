@@ -4,12 +4,23 @@
     <meta charset="utf-8">
     <title>Gym</title>
     <style media="screen">
-      h1, form{
+      h1, p, h2, h3{
         margin-left: 5%;
+      }
+      body{
+        background-image: url("https://t5.rbxcdn.com/ec3fee5fceaed0c83fa0c799ff3abfd5");
+        background-size: cover;
+          background-repeat: no-repeat;
+      }
+      .box{
+        float: left;
+        border: 1px solid black;
+        background-color: white;
       }
     </style>
   </head>
   <body>
+    <div class="box">
     <h1>Gym</h1>
     <% let moreTwo = false %>
     <% let x = [] %>
@@ -49,5 +60,6 @@
       <p>Ready to go to battle?</p>
       <button type="button" name="gymbutton"><a href="/gym2">Battle!</a></button>
       <% } %>
+    </div>
   </body>
 </html>

@@ -57,7 +57,7 @@ table{
 <% moreTwo = true} %>
   <%  for(let i=0;i<pokemon.length;i++){ %>
     <tr>
-      <td><%= pokemon[i].name %></td>
+      <td><a href="/show/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a></td>
       <td><%= pokemon[i].cp %></td>
       <td><%= pokemon[i].in_gym %></td>
       <td><%= pokemon[i].trainer_id %></td>
@@ -65,7 +65,7 @@ table{
       <td><a href="/edit/pokemon/<%=pokemon[i].id%>">Edit</a></td>
       <td><a href='/pokemon/delete/<%=pokemon[i].id%>'>Delete</a></td>
       <% if(pokemon[i].in_gym===true){ %>
-      <td><a href="#">Remove from gym</a></td>
+      <td><a href="/removegym/<%=pokemon[i].id%>">Remove from gym</a></td>
       <% } %>
       <% if(pokemon[i].in_gym===false && moreTwo===false){ %>
       <td><a href="/addthismontogym/<%=pokemon[i].id%>">Add to gym</a></td>

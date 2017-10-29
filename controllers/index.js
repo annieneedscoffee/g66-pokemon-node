@@ -149,6 +149,21 @@ module.exports = {
     });
   },
 
+  fromgym: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .update({
+    in_gym: false
+      })
+    .then((result)=>{
+      console.log(result);
+      res.redirect("/pokemon")
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
   gymmon: function(req, res){
     knex('pokemon')
     .where('id', req.params.id)
