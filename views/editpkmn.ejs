@@ -26,7 +26,7 @@
     <div class="box">
 <h1>Edit Pokemon Below</h1>
 <h2>Pokemon: <%= pokemon.name%></h2>
-<form action="/edit/pokemon/" method="post">
+<form action="/edit/pokemon/<%=pokemon.id%>" method="post">
   <h2>Name: </h2>
   <p><%= pokemon.name %></p>
   <input type="text" name="name" placeholder="name">

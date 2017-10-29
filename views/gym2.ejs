@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Let's play!</title>
+    <style>
+      .warning{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <% let moreTwo = false %>
+    <% let x = [] %>
+    <% for(y=0;y<pokemon.length;y++){ %>
+   <%   if(pokemon[y].in_gym===true){ %>
+     <% x.push(pokemon[y].name) %>
+ <%   } %>
+ <% } %>
+ <% if(x.length>1){ %>
+ <% moreTwo = true} %>
+ <% if(moreTwo === false){ %>
+<p>Sorry, you need two pokemon in the gym to play. Go back to the gym selection page <a href="/gym">here</a> to select your pokemon to play.</p>
+   <% } else if(x[0]===x[1]){ %>
+<p class="warning">"A Pokemón cannot fight itself! Please choose a different Pokemón!"</p>
+   <% }else{ %>
+     <p>Let's Play! - <%= x[0] %>v. <%= x[1] %></p>
+     <button type="button" name="button"><a href="/battle">Battle!</a></button>
+     <% } %>
+  </body>
+</html>

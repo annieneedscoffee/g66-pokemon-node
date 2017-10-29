@@ -68,7 +68,7 @@ table{
       <td><a href="#">Remove from gym</a></td>
       <% } %>
       <% if(pokemon[i].in_gym===false && moreTwo===false){ %>
-      <td><a href="#">Add to gym</a></td>
+      <td><a href="/addthismontogym/<%=pokemon[i].id%>">Add to gym</a></td>
       <% } %>
     </tr>
     <% } %>

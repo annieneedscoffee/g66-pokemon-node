@@ -3,15 +3,51 @@
   <head>
     <meta charset="utf-8">
     <title>Gym</title>
+    <style media="screen">
+      h1, form{
+        margin-left: 5%;
+      }
+    </style>
   </head>
   <body>
     <h1>Gym</h1>
+    <% let moreTwo = false %>
+    <% let x = [] %>
+    <% for(y=0;y<pokemon.length;y++){ %>
+   <%   if(pokemon[y].in_gym===true){ %>
+     <% x.push(pokemon[y].name) %>
+ <%   } %>
+ <% } %>
+ <% if(x.length>1){ %>
+ <% moreTwo = true} %>
     <h2>Select Pokemon</h2>
-    <select class="" name="">
-
-    </select>
-    <select class="" name="">
-
-    </select>
+    <% if(x.length===0){ %>
+      <p>Choose Pokemon 1</p>
+      <ul>
+        <% for(let j=0; j<pokemon.length; j++){ %>
+          <li><button type="button" name="button">
+            <a href="/addthismon1/<%=pokemon[j].id%>"> <%= pokemon[j].name %></a>
+          </button></li>
+        <% } %>
+      </ul>
+    <% }else{ %>
+      <h3>Pokemon 1: <%= x[0] %></h3>
+      <% } %>
+      <% if(x.length<2){ %>
+        <p>Choose Pokemon 2</p>
+    <ul>
+      <% for(let j=0; j<pokemon.length; j++){ %>
+        <li><button type="button" name="button">
+          <a href="/addthismon/<%=pokemon[j].id%>"> <%= pokemon[j].name %></a>
+        </button></li>
+      <% } %>
+    </ul>
+    <% }else{ %>
+      <h3>Pokemon 2: <%= x[1] %></h3>
+      <% } %>
+      <% if(x.length>1){ %>
+      <p>Ready to go to battle?</p>
+      <button type="button" name="gymbutton"><a href="/gym2">Battle!</a></button>
+      <% } %>
   </body>
 </html>

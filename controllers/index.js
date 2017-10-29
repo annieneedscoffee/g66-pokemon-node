@@ -59,7 +59,23 @@ module.exports = {
     });
   },
 
-
+  edmon: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .update({
+      name: req.body.name,
+      cp: req.body.cp,
+      in_gym: req.body.in_gym,
+      trainer_id: req.body.trainer_id
+    })
+    .then((result)=>{
+      console.log(result);
+      res.redirect("/pokemon")
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
 
   train: function(req, res){
     knex('trainers').then((result)=>{
@@ -88,6 +104,60 @@ module.exports = {
   gym: function(req, res){
     knex('pokemon').then((result)=>{
       res.render('gym', {pokemon: result})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  gym2: function(req, res){
+    knex('pokemon').then((result)=>{
+      res.render('gym2', {pokemon: result})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  gymmon1: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .update({
+    in_gym: true
+      })
+    .then((result)=>{
+      console.log(result);
+      res.redirect("/gym")
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  togym: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .update({
+    in_gym: true
+      })
+    .then((result)=>{
+      console.log(result);
+      res.redirect("/pokemon")
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  gymmon: function(req, res){
+    knex('pokemon')
+    .where('id', req.params.id)
+    .update({
+    in_gym: true
+      })
+    .then((result)=>{
+      console.log(result);
+      res.redirect("/gym2")
     })
     .catch((err)=>{
       console.error(err)
